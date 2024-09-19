@@ -82,3 +82,38 @@
 
 <u>**Exemple**</u> : Analyser les facteurs qui influencent le temps jusqu'à la défaillance d'une pièce de machine dans un cadre industriel, en tenant compte de variables comme la température de fonctionnement, la charge et la fréquence de maintenance, tout en gérant les données censurées (pièces qui n'ont pas encore échoué à la fin de l'étude).
 
+## Choix des Techniques de Régression pour notre Problème
+
+Pour un projet visant à déterminer le prix d'un appartement en fonction de ses caractéristiques, nous choississons de comparer les performances des techniques de régression suivantes :
+
+### 1. Régression Linéaire Multiple:
+- **Avantages** :  
+    - Facile à interpréter et à expliquer aux parties prenantes non techniques.
+    - Bonne performance, souvant suffisante pour capturer les relations linéaires entre les caractéristiques de l'appartement et son prix.
+    - Rapide à entraîner et à déployer, ce qui est utile pour des itérations rapides et les tests.
+- **Limitations** :  
+    - Ne peut capturer que des relations linéaires entre les caractéristiques et le prix, ce qui peut être limitant pour des relations non linéaires qui peuvent exister dans le marché immobilier.
+    - Sensible aux valeurs aberrantes et aux erreurs de mesure dans les données.
+
+### 2. Forêt Aléatoire:
+- **Avantages** :  
+    - Gère bien les relations non linéaires et les interactions complexes entre les caractéristiques.
+    - Robuste aux valeurs aberrantes et aux erreurs de mesure, grâce à l'agrégation de nombreux arbres.
+    - Fournit des mesures d'importance des variables pour identifier les caractéristiques les plus influentes.
+    - Bonne performance en général, même sans réglage fin.
+- **Limitations** :  
+    - Moins interprétable que la régression linéaire, ce qui peut être un inconvénient si l'explication du modèle est importante.
+    - Peut être plus lent à entraîner et à déployer que la régression linéaire, en particulier pour de grandes forêts.
+
+### 3. Gradient Boosting:
+- **Avantages** :  
+    - Performances généralement supérieures à la forêt aléatoire, en particulier pour des ensembles de données de taille moyenne à grande.
+    - Peut capturer des relations très complexes et non linéaires entre les caractéristiques et le prix.
+    - Robuste aux valeurs aberrantes et aux erreurs de mesure, grâce à l'agrégation de nombreux modèles.
+    - Permet un réglage fin des hyperparamètres pour optimiser les performances.
+- **Limitations** :
+    - Plus complexe à mettre en œuvre et à régler que la forêt aléatoire, nécessitant plus d'expertise et de temps.
+    Risque de surapprentissage si les hyperparamètres ne sont pas correctement réglés.
+    Temps d'entraînement plus long que les autres méthodes, en particulier pour des ensembles de données volumineux.
+
+Ces trois algorithmes offrent un bon équilibre entre simplicité, performance et interprétabilité. Pour notre problème de prédiction des prix des appartements, nous commencerons par entraîner et évaluer un modèle de régression linéaire multiple afin de construire une base de comparaison. Ensuite, nous explorerons les performances de la forêt aléatoire et du boosting gradient pour voir si des modèles plus complexes peuvent améliorer les prédictions. Nous comparerons les résultats en fonction de mesures de performance telles que l'erreur quadratique moyenne (RMSE) et le coefficient de détermination (R²), ainsi que de l'interprétabilité des modèles.
