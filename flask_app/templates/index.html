@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Prédiction Immobilière</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Prédiction des prix des biens immobiliers</h1>
+    <p>Bienvenue dans cette application qui utilise plusieurs algorithmes de prédiction pour estimer le prix des biens immobiliers.</p>
+    <p>Utilisez les liens ci-dessous pour voir les résultats des différents algorithmes :</p>
+    <ul>
+        <li><a href="/linear">Régression Linéaire</a></li>
+        <li><a href="/xgboost">XgBoost</a></li>
+        <li><a href="/random_forest">Random Forest</a></li>
+    </ul>
+</body>
+</html>
