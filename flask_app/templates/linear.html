@@ -6,25 +6,49 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Régression Linéaire</h1>
-    <form method="POST">
-        <label for="sq_mt_built">Superficie (m²) :</label>
-        <input type="text" id="sq_mt_built" name="sq_mt_built" required><br>
+    <h1 class="title-algo">Régression Linéaire</h1>
+    <div class="container">
+        <div class="container-form">
+            <form method="POST">
+                <label for="sq_mt_built">Superficie (m²) :</label>
+                <input type="text" id="sq_mt_built" name="sq_mt_built" required><br>
+        
+                <label for="n_rooms">Nombre de pièces :</label>
+                <input type="text" id="n_rooms" name="n_rooms" required><br>
+        
+                <label for="n_bathrooms">Nombre de salle de bain :</label>
+                <input type="text" id="n_bathrooms" name="n_bathrooms" required><br>
+        
+                <label for="rent_price">Tarif location :</label>
+                <input type="text" id="rent_price" name="rent_price" required><br>
+        
+                <label for="PricePerSqM">Prix par m² :</label>
+                <input type="text" id="PricePerSqM" name="PricePerSqM" required><br>
 
-        <label for="n_rooms">Nombre de pièces :</label>
-        <input type="text" id="n_rooms" name="n_rooms" required><br>
+                <label for="buy_price_by_area">Prix d'achat de la zone :</label>
+                <input type="text" id="buy_price_by_area" name="buy_price_by_area" required><br>
+        
+                <input type="submit" value="Prédire">
+            </form>
+        </div>
+        <div class="container-info">
+            <span>Superficie:</span><p>Entrez la superficie souhaité pour votre bien</p>
+            <span>Nb pièces:</span> <p>Entrez le nombre de pièces souhaité pour votre bien</p>
+            <span>Nb SdB:</span><p> Entrez le nombre de salle de bain souhaité pour votre bien</p>
+            <span>Tarif location:</span><p> Entrez le tarif de location souhaité pour votre bien</p>
+            <span>Prix m²:</span><p>Entrez le prix au m² souhaité pour votre bien</p>
+        </div>
+    </div>
 
-        <label for="buy_price_by_area">Prix d'achat par zone :</label>
-        <input type="text" id="buy_price_by_area" name="buy_price_by_area" required><br>
 
-        <label for="PricePerSqM">Prix par m² :</label>
-        <input type="text" id="PricePerSqM" name="PricePerSqM" required><br>
-
-        <input type="submit" value="Prédire">
-    </form>
-
-    {% if prediction %}
-        <h2>Résultat de la prédiction : {{ prediction }} €</h2>
+    {% if prediction_linear %}
+        <p>Superficie: {{sq_mt_built}}</p>
+        <p>Nombre de pièce: {{n_rooms}}</p>
+        <p>Nombre de salle de bain: {{n_bathrooms}}</p>
+        <p>Prix de location: {{rent_price}}</p>
+        <p>Prix au m²: {{price_per_sqm}}</p>
+        <p>Prix d'achat de la zone: {{buy_price_by_area}}</p>
+        <h2>Résultat de la prédiction : {{ prediction_linear }} €</h2>
     {% endif %}
     
     <a href="/">Retour à l'accueil</a>

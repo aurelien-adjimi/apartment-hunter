@@ -1,24 +1,147 @@
+/*GLOBAL STYLE*/
+
+html {
+  height: 100%;
+}
+
+h2 {
+  color: pink;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: black;
+  height: 100%;
 }
 
-h1 {
-  color: #333;
+body p {
+  color: white;
+}
+
+
+/*INDEX STYLE*/
+.title-index {
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background: linear-gradient(0deg, #ffffff 0%, #121111 100%);
+}
+
+h3{
+  color: bisque;
+  margin-top: 50px;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20%;
+}
+
+.container-btn p {
+  text-align: center;
+  color: white;
+  font-size: 23px;
+}
+
+.container-btn .btn {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.container-btn .btn a {
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid purple;
+  border-radius: 25px;
+  width: 150px;
+  text-align: center;
+  color: white;
+}
+
+.container-btn .btn a:hover {
+  text-decoration: none;
+  background-color: purple;
+}
+
+/*ALGORITHM PAGES STYLE*/
+.title-algo {
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 label {
   display: block;
   margin: 10px 0 5px;
+  color: white;
 }
 
-input[type="text"],
-input[type="submit"] {
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+form {
+  width: 50%;
+  margin: auto;
+}
+
+.container-info {
+  color: white;
+  margin: auto;
+}
+
+.container-info span {
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.container-info p {
+  font-size: 13px;
+}
+
+input[type="text"] {
   padding: 10px;
   width: 100%;
   margin-bottom: 15px;
+}
+
+input[type="submit"] {
+  width: 150px;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background: none;
+  border: 1px solid purple;
+  border-radius: 25px;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  background-color: purple;
 }
 
 a {
