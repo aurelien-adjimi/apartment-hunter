@@ -29,23 +29,22 @@ def linear():
             n_bathrooms = int(request.form['n_bathrooms'])
             rent_price = float(request.form['rent_price'])
             price_per_sqm = float(request.form['PricePerSqM'])
-            buy_price_by_area = float(request.form['buy_price_by_area'])
+
 
             # Créer le tableau des features
-            features = np.array([[sq_mt_built, n_rooms, n_bathrooms, rent_price, price_per_sqm, buy_price_by_area]])
+            features = np.array([[sq_mt_built, n_rooms, n_bathrooms, rent_price, price_per_sqm]])
 
             # Prédire avec le modèle
             prediction_linear = linear_model.predict(features)
             print(prediction_linear)
 
             return render_template('linear.html', prediction_linear = prediction_linear[0],
-                                   sq_mt_built = sq_mt_built,
-                                   n_rooms = n_rooms,
-                                   n_bathrooms = n_bathrooms,
-                                   rent_price = rent_price,
-                                   price_per_sqm = price_per_sqm,
-                                   buy_price_by_area = buy_price_by_area
-                                   )
+                                    sq_mt_built = sq_mt_built,
+                                    n_rooms = n_rooms,
+                                    n_bathrooms = n_bathrooms,
+                                    rent_price = rent_price,
+                                    price_per_sqm = price_per_sqm                                   
+                                )
 
         except Exception as e:
             return f"Erreur : {str(e)}"
@@ -63,21 +62,20 @@ def random_forest():
             n_bathrooms = int(request.form['n_bathrooms'])
             rent_price = float(request.form['rent_price'])
             price_per_sqm = float(request.form['PricePerSqM'])
-            buy_price_by_area = float(request.form['buy_price_by_area'])
 
             # Créer le tableau des features
-            features = np.array([[sq_mt_built, n_rooms, n_bathrooms, rent_price, price_per_sqm, buy_price_by_area]])
+            features = np.array([[sq_mt_built, n_rooms, n_bathrooms, rent_price, price_per_sqm]])
 
             # Prédire avec le modèle
             prediction_rf = rf_model.predict(features)
 
             return render_template('random_forest.html', prediction_rf = prediction_rf[0],
-                                   sq_mt_built = sq_mt_built,
-                                   n_rooms = n_rooms,
-                                   n_bathrooms = n_bathrooms,
-                                   rent_price = rent_price,
-                                   price_per_sqm = price_per_sqm,
-                                   buy_price_by_area = buy_price_by_area)
+                                    sq_mt_built = sq_mt_built,
+                                    n_rooms = n_rooms,
+                                    n_bathrooms = n_bathrooms,
+                                    rent_price = rent_price,
+                                    price_per_sqm = price_per_sqm,
+                                )
 
         except Exception as e:
             return f"Erreur : {str(e)}"
@@ -95,21 +93,20 @@ def xgboost():
             n_bathrooms = int(request.form['n_bathrooms'])
             rent_price = float(request.form['rent_price'])
             price_per_sqm = float(request.form['PricePerSqM'])
-            buy_price_by_area = float(request.form['buy_price_by_area'])
 
             # Créer le tableau des features
-            features = np.array([[sq_mt_built, n_rooms, n_bathrooms, rent_price, price_per_sqm, buy_price_by_area]])
+            features = np.array([[sq_mt_built, n_rooms, n_bathrooms, rent_price, price_per_sqm]])
 
             # Prédire avec le modèle
             prediction_boost = xgboost_model.predict(features)
 
             return render_template('xgboost.html', prediction_boost = prediction_boost[0],
-                                   sq_mt_built = sq_mt_built,
-                                   n_rooms = n_rooms,
-                                   n_bathrooms = n_bathrooms,
-                                   rent_price = rent_price,
-                                   price_per_sqm = price_per_sqm,
-                                   buy_price_by_area = buy_price_by_area)
+                                    sq_mt_built = sq_mt_built,
+                                    n_rooms = n_rooms,
+                                    n_bathrooms = n_bathrooms,
+                                    rent_price = rent_price,
+                                    price_per_sqm = price_per_sqm
+                                )
 
         except Exception as e:
             return f"Erreur : {str(e)}"

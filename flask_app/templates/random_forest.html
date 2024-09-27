@@ -24,9 +24,6 @@
         
                 <label for="PricePerSqM">Prix par m² :</label>
                 <input type="text" id="PricePerSqM" name="PricePerSqM" required><br>
-
-                <label for="buy_price_by_area">Prix d'achat de la zone :</label>
-                <input type="text" id="buy_price_by_area" name="buy_price_by_area" required><br>
         
                 <input type="submit" value="Prédire">
             </form>
@@ -46,7 +43,6 @@
     <p>Nombre de salle de bain: {{n_bathrooms}}</p>
     <p>Prix de location: {{rent_price}}</p>
     <p>Prix au m²: {{price_per_sqm}}</p>
-    <p>Prix d'achat de la zone: {{buy_price_by_area}}</p>
     <h2>Résultat de la prédiction : {{ prediction_rf }} €</h2>
     {% endif %}
     
