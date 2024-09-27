@@ -4,13 +4,13 @@ import numpy as np
 
 app = Flask(__name__)
 
-with open('./models/linear_regression_model.pkl', 'rb') as file_linear:
+with open('flask_app/models/linear_regression_model.pkl', 'rb') as file_linear:
     linear_model = pickle.load(file_linear)
 
-with open('./models/random-forest_model.pkl', 'rb') as file_rf: 
+with open('flask_app/models/random-forest_model.pkl', 'rb') as file_rf:
     rf_model = pickle.load(file_rf)
 
-with open('./models/xgboost_model.pkl', 'rb') as file_boost:
+with open('flask_app/models/xgboost_model.pkl', 'rb') as file_boost:
     xgboost_model = pickle.load(file_boost)
 
 # Page d'accueil
